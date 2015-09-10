@@ -10,11 +10,15 @@
 ; If you don't specify this, the haskell mode yells at you incessantly. Great.
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
+; Seems the same is true for purescript. BOOOO
+(add-hook 'purescript-mode-hook 'turn-on-purescript-indentation)
+
 ; Remove whitespace at end of lines on save.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-; Don't warn when using upcase-region.
+; Don't warn when switching cases.
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
 
 ; Disable the abomination known as electric-indent-mode.
 (when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
@@ -54,8 +58,7 @@
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
-; Quickening up this process...
-(global-set-key (kbd "M-:") 'goto-line)
+(global-set-key (kbd "M-;") 'goto-line)
 
 ; Automatically revert changed buffers.
 (global-auto-revert-mode 1)
@@ -67,4 +70,22 @@
       (interactive
        (if mark-active (list (region-beginning) (region-end))
          (list (save-excursion (backward-word 1) (point)) (point)))))
-(put 'downcase-region 'disabled nil)
+
+(put 'erase-buffer 'disabled nil)
+
+;; Enable mouse support
+(unless window-system
+  (require 'mouse)
+  (xterm-mouse-mode t)
+  (global-set-key [mouse-4] (lambda ()
+                              (interactive)
+                              (scroll-down 1)))
+  (global-set-key [mouse-5] (lambda ()
+                              (interactive)
+                              (scroll-up 1)))
+  (defun track-mouse (e))
+  (setq mouse-sel-mode t)
+)
+
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
