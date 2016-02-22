@@ -14,3 +14,6 @@
 ; Use the monokai theme without background
 (require 'monokai-theme)
 (unset-background)
+
+; Menu bar seems pointless
+(menu-bar-mode -1)
