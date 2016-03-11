@@ -49,3 +49,7 @@
 
 ; Disable show-paren-mode when using proof general (has a bug).
 (add-hook 'proof-ready-for-assistant-hook (lambda () (show-paren-mode 0)))
+
+; Make prompts work in ansi-term (maybe?)
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
