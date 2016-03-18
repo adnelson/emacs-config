@@ -1,4 +1,4 @@
-(load-file "custom/packages.el")
-(load-file "custom/keybindings.el")
-(load-file "custom/behavior.el")
-(load-file "custom/visuals.el")
+(load-file "~/.emacs.d/custom/packages.el")
+(load-file "~/.emacs.d/custom/keybindings.el")
+(load-file "~/.emacs.d/custom/behavior.el")
+(load-file "~/.emacs.d/custom/visuals.el")
