@@ -4,7 +4,7 @@
                          ("melpa" . "http://melpa.org/packages/")))
 
 ; Load up coq.
-(load-file "~/.nix-profile/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+; (load-file "~/.nix-profile/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
 (defun add-to-load-path (path)
  "Add something to the load path, if it's not there already."
