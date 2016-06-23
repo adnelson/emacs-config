@@ -53,3 +53,6 @@
 ; Make prompts work in ansi-term (maybe?)
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+; Disable tabs
+(setq-default indent-tabs-mode nil)
