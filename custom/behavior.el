@@ -38,6 +38,9 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+; Infinite scrollback with ansi-term
+(setq term-buffer-maximum-size 0)
+
 ; Disable the abomination known as electric-indent-mode.
 (when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
 
@@ -56,3 +59,6 @@
 
 ; Disable tabs
 (setq-default indent-tabs-mode nil)
+
+; Scroll past end when using C-v or M-v
+(setq scroll-error-top-bottom t)
