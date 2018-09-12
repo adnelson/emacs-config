@@ -1,11 +1,26 @@
-<<<<<<< HEAD
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (load-file "~/.emacs.d/custom/keybindings.el")
 (load-file "~/.emacs.d/custom/behavior.el")
 (load-file "~/.emacs.d/custom/visuals.el")
 (load-file "~/.emacs.d/custom/packages.el")
-=======
-(load-file "~/.emacs.d/custom/packages.el")
-(load-file "~/.emacs.d/custom/keybindings.el")
-(load-file "~/.emacs.d/custom/behavior.el")
-(load-file "~/.emacs.d/custom/visuals.el")
->>>>>>> 884c496686a122ff667485f34a9fa3dd7884e324
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (dockerfile-mode rust-mode reason-mode yaml-mode php-mode elixir-mode erlang circe circe-notifications haskell-mode nix-mode smex)))
+ '(safe-local-variable-values (quote ((whitespace-check-buffer-indent)))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

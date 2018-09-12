@@ -12,7 +12,8 @@
 (column-number-mode)
 
 ; Use the monokai theme without background
-(require 'monokai-theme)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'monokai t)
 (unset-background)
 
 ; Menu bar seems pointless
