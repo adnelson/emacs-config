@@ -18,3 +18,5 @@
 
 ; Menu bar seems pointless
 (menu-bar-mode -1)
+
+(defcustom css-indent-level 2 "Number of spaces for each indent step.")

@@ -69,19 +69,21 @@
 ; Indentation level for javascript
 (setq js-indent-level 2)
 
+;; disable lockfiles
+;; see http://www.gnu.org/software/emacs/manual/html_node/emacs/Interlocking.html
+(setq create-lockfiles nil)
 
-;; make backup to a designated dir, mirroring the full path
-(defun my-backup-file-name (fpath)
-  "Return a new file path of a given file path.
-If the new path's directories does not exist, create them."
-  (let* (
-        (backupRootDir "~/.emacs.d/emacs-backup/")
-        (filePath (replace-regexp-in-string "[A-Za-z]:" "" fpath )) ; remove Windows driver letter in path, for example, “C:”
-        (backupFilePath (replace-regexp-in-string "//" "/" (concat backupRootDir filePath "~") ))
-        )
-    (make-directory (file-name-directory backupFilePath) (file-name-directory backupFilePath))
-    backupFilePath
-  )
-)
+;; store all backup files in the tmp dir
+;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Backup-Names.html
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
 
-(setq make-backup-file-name-function 'my-backup-file-name)
+;; store all autosave files in the tmp dir
+;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Save-Files.html
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+;; autosave the undo-tree history
+(setq undo-tree-history-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq undo-tree-auto-save-history t)

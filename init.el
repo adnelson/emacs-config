@@ -16,7 +16,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (dockerfile-mode rust-mode reason-mode yaml-mode php-mode elixir-mode erlang circe circe-notifications haskell-mode nix-mode smex)))
+    (tuareg markdown-mode purescript-mode dockerfile-mode rust-mode reason-mode yaml-mode php-mode elixir-mode erlang circe circe-notifications haskell-mode nix-mode smex)))
  '(safe-local-variable-values (quote ((whitespace-check-buffer-indent)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
