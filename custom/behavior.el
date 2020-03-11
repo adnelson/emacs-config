@@ -87,3 +87,5 @@
 (setq undo-tree-history-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq undo-tree-auto-save-history t)
+
+(load-file "~/.emacs.d/custom/clipboard.el")

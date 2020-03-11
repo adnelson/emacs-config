@@ -1,6 +1,5 @@
 ; Add a few package repos in addition to the default, which doesn't have much.
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")))
 
 ; Load up coq.
