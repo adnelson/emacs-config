@@ -9,6 +9,7 @@
 (load-file "~/.emacs.d/custom/behavior.el")
 (load-file "~/.emacs.d/custom/visuals.el")
 (load-file "~/.emacs.d/custom/packages.el")
+(add-to-list 'term-file-aliases '("alacritty" . "xterm"))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

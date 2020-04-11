@@ -89,3 +89,13 @@
 (setq undo-tree-auto-save-history t)
 
 (load-file "~/.emacs.d/custom/clipboard.el")
+
+; 2-space indentation for typescript
+(setq typescript-indent-level 2)
+
+; 2-space indentation for shell
+(setq sh-basic-offset 2)
+
+; Ignore bucklescript compilation artifacts
+(add-to-list 'completion-ignored-extensions ".bs.js")
+(add-to-list 'completion-ignored-extensions ".gen.js")
