@@ -99,3 +99,7 @@
 ; Ignore bucklescript compilation artifacts
 (add-to-list 'completion-ignored-extensions ".bs.js")
 (add-to-list 'completion-ignored-extensions ".gen.js")
+
+; Disable bell, cuz it's annoying
+; https://stackoverflow.com/questions/11679700/emacs-disable-beep-when-trying-to-move-beyond-the-end-of-the-document
+(setq ring-bell-function 'ignore)
