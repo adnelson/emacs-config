@@ -103,3 +103,8 @@
 ; Disable bell, cuz it's annoying
 ; https://stackoverflow.com/questions/11679700/emacs-disable-beep-when-trying-to-move-beyond-the-end-of-the-document
 (setq ring-bell-function 'ignore)
+
+; Enable projectile
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
