@@ -7,7 +7,11 @@
         )
     (if (region-active-p)
         (progn
-          (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+          (shell-command-on-region
+            (region-beginning)
+            (region-end)
+            (if (eq system-type 'darwin) "pbcopy" "xsel -i -b")
+          )
           (message "Yanked region to clipboard!")
           (deactivate-mark))
       (message "No region active; can't yank to clipboard!")))
@@ -20,8 +24,8 @@
         (clipboard-yank)
         (message "graphics active")
         )
-    (insert (shell-command-to-string "xsel -o -b"))
+    (insert
+      (shell-command-to-string
+        (if (eq system-type 'darwin) "pbpaste" "xsel -o -b")))
     )
   )
-
-(fmakunbound 'copy-from-ubuntu)
