@@ -29,5 +29,3 @@
         (if (eq system-type 'darwin) "pbpaste" "xsel -o -b")))
     )
   )
-
-(fmakunbound 'copy-from-ubuntu)
