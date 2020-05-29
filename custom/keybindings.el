@@ -16,8 +16,6 @@
 (global-set-key (kbd "C-M-<left>") 'backward-word)
 (global-set-key (kbd "C-M-<right>") 'forward-word)
 
-(global-set-key (kbd "M-t") 'ansi-term)
-
 ;;;;;; A bunch of hacks we need to get tmux and emacs to get along
 ;; handle tmux's xterm-keys
 ;; put the following line in your ~/.tmux.conf:

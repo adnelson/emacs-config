@@ -89,6 +89,7 @@
 (setq undo-tree-auto-save-history t)
 
 (load-file "~/.emacs.d/custom/clipboard.el")
+(load-file "~/.emacs.d/custom/term.el")
 
 ; 2-space indentation for typescript
 (setq typescript-indent-level 2)
@@ -108,3 +109,30 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(defun move-file (new-location)
+  "Write this file to NEW-LOCATION, and delete the old one."
+  (interactive (list (expand-file-name
+                      (if buffer-file-name
+                          (read-file-name "Move file to: ")
+                        (read-file-name "Move file to: "
+                                        default-directory
+                                        (expand-file-name (file-name-nondirectory (buffer-name))
+                                                          default-directory))))))
+  (when (file-exists-p new-location)
+    (delete-file new-location))
+  (let ((old-location (expand-file-name (buffer-file-name))))
+    (message "old file is %s and new file is %s"
+             old-location
+             new-location)
+    (write-file new-location t)
+    (when (and old-location
+               (file-exists-p new-location)
+               (not (string-equal old-location new-location)))
+      (delete-file old-location))))
+
+
+;; TODO: Write a line-based comment function for reasonml
+(defun reason-line-comment ()
+  (interactive)
+  (string-insert-rectangle "// "))
