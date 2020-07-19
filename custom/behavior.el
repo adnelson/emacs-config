@@ -136,3 +136,7 @@
 (defun reason-line-comment ()
   (interactive)
   (string-insert-rectangle "// "))
+
+;; Don't enable debugger on Ctrl-g
+;; Note: you can also use `M-x toggle-debug-on-quit`
+(setq debug-on-quit nil)
