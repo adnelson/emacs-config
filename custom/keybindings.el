@@ -18,6 +18,8 @@
 
 (global-set-key (kbd "C-R") 'revert-buffer)
 
+(global-set-key (kbd "M-z") 'fzf-projectile)
+
 ;;;;;; A bunch of hacks we need to get tmux and emacs to get along
 ;; handle tmux's xterm-keys
 ;; put the following line in your ~/.tmux.conf:

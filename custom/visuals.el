@@ -6,7 +6,7 @@
 (add-hook 'window-setup-hook 'unset-background)
 
 ; Set the default font (only matters for window mode)
-(set-default-font "Terminus-11")
+; (set-default-font "Terminus-11")
 
 ; Show column numbers.
 (column-number-mode)
